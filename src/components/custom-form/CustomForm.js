@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './CustomForm.css';
 
 const CustomForm = () => {
+	const [type, setType] = useState('color');
+
 	return (
 		<section>
 			<form>
