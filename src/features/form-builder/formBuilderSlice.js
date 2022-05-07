@@ -7,7 +7,7 @@ const initialState = {
 			id: 1,
 			order: 1,
 			label: 'Email Address',
-			placeHolder: 'Your Email',
+			placeholder: 'Your Email',
 			type: 'email',
 			options: [],
 			required: false,
@@ -16,7 +16,7 @@ const initialState = {
 			id: 2,
 			order: 2,
 			label: 'Password',
-			placeHolder: 'Your Password',
+			placeholder: 'Your Password',
 			type: 'password',
 			options: [],
 			required: true,
@@ -31,7 +31,15 @@ export const formBuilderSlice = createSlice({
 	name: 'formBuilder',
 	initialState,
 	reducers: {
-		addField: (state) => {},
+		addField: (state, action) => {
+			const formFieldPayload = {
+				...action.payload,
+				required: true,
+				id: Math.random() * 1000,
+			};
+
+			state.formFields.push(formFieldPayload);
+		},
 		deleteField: (state, action) => {},
 		editField: (state, action) => {},
 	},

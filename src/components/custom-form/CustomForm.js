@@ -16,6 +16,7 @@ const CustomForm = () => {
 			<form className='custom-form'>
 				<h1>Form Title</h1>
 				{formFields.map((formField) => {
+					console.log(formField);
 					return (
 						<div className='form-control' key={formField.id}>
 							<label className='form-control__label' htmlFor={formField.id}>
@@ -26,7 +27,7 @@ const CustomForm = () => {
 								className='form-control__input'
 								autoComplete={formField.type}
 								type={formField.type}
-								placeholder={formField.placeHolder}
+								placeholder={formField.placeholder}
 								required={formField.required}
 							/>
 						</div>
