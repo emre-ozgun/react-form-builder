@@ -1,37 +1,45 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// both the builder and the form itself shall use formFields
 const initialState = {
-	formFields: [],
+	formFields: [
+		{
+			id: 1,
+			order: 1,
+			label: 'Email Address',
+			placeHolder: 'Your Email',
+			type: 'email',
+			options: [],
+			required: false,
+		},
+		{
+			id: 2,
+			order: 2,
+			label: 'Password',
+			placeHolder: 'Your Password',
+			type: 'password',
+			options: [],
+			required: true,
+		},
+	],
 };
 
-const mockField = {
-	id: 'id',
-	order: 1,
-	label: 'Label',
-	placeHolder: 'Placeholder',
-	type: 'text',
-	options: ['if', 'select', 'or', 'checklist'],
-};
-
-initialState.formFields.push(mockField);
+// options are available for types that suport multiple fields (checklist/select/radio)
+// order for drag and drop - must be float and must also be initialized with large number!
 
 export const formBuilderSlice = createSlice({
-	name: 'counter',
+	name: 'formBuilder',
 	initialState,
 	reducers: {
-		addField: (state) => {
-			// Redux Toolkit allows us to write "mutating" logic in reducers. It
-			// doesn't actually mutate the state because it uses the Immer library,
-			// which detects changes to a "draft state" and produces a brand new
-			// immutable state based off those changes
-			state.value += 1;
-		},
-		deleteField: (state) => {},
-		editField: (state) => {},
+		addField: (state) => {},
+		deleteField: (state, action) => {},
+		editField: (state, action) => {},
 	},
 });
 
-// Action creators are generated for each case reducer function
 export const { addField, deleteField, editField } = formBuilderSlice.actions;
+
+// Other code such as selectors can use the imported `RootState` type
+export const selectFormFields = (state) => state.formBuilder;
 
 export default formBuilderSlice.reducer;
