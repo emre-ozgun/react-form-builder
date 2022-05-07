@@ -3,7 +3,3 @@
 	flex-direction: column;
 	gap: 1rem;
 }
-
-.form-control__input {
-	padding: 0.25rem 0.5rem;
-}

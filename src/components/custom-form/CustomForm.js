@@ -18,17 +18,21 @@ const CustomForm = () => {
 				{formFields.map((formField) => {
 					return (
 						<div className='form-control' key={formField.id}>
-							<label className='form-control__label'>{formField.label}</label>
+							<label className='form-control__label' htmlFor={formField.id}>
+								{formField.label}
+							</label>
 							<input
+								id={formField.id}
 								className='form-control__input'
 								autoComplete={formField.type}
 								type={formField.type}
 								placeholder={formField.placeHolder}
+								required={formField.required}
 							/>
 						</div>
 					);
 				})}
-				<button className='btn btn-submit'>Submit</button>
+				<button className='btn btn-submit'>Register</button>
 			</form>
 		</section>
 	);

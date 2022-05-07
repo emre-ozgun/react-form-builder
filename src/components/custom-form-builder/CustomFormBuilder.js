@@ -32,7 +32,7 @@ const CustomFormBuilder = () => {
 						<option value='url'>url</option>
 					</select>
 				</div>
-				<input type='submit' placeholder='submit' />
+				<button className='btn btn-submit'>Add Field</button>
 			</form>
 		</section>
 	);
