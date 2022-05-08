@@ -38,7 +38,7 @@ const CustomFormBuilder = () => {
 							setFields((prev) => ({ ...prev, label: e.target.value }))
 						}
 						type='text'
-						placeholder='label of your field'
+						placeholder='label...'
 					/>
 				</div>
 
@@ -52,10 +52,11 @@ const CustomFormBuilder = () => {
 							setFields((prev) => ({ ...prev, placeholder: e.target.value }))
 						}
 						type='text'
-						placeholder='placeholder of your field'
+						placeholder='placeholder...'
 					/>
 				</div>
 
+				{/* HARDCODED OPTIONS */}
 				<div className='form-control'>
 					<label htmlFor=''>select type</label>
 					<select

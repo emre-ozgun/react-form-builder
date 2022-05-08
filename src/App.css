@@ -48,7 +48,8 @@ section {
 }
 
 input,
-select {
+select,
+textarea {
 	padding: 0.4rem 0.7rem;
 	padding-left: 0.3rem;
 	border-radius: 2px;
@@ -61,18 +62,21 @@ select {
 	font-weight: 500;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
 	font-weight: 500;
 	color: var(--clr-black-4);
 	opacity: 0.5;
 	text-transform: capitalize;
 }
 
-input:hover {
+input:hover,
+textarea:hover {
 	border: 1px solid var(--clr-grey-2);
 }
 
-input:focus {
+input:focus,
+textarea:focus {
 	border-radius: var(--radius);
 	border: 1px solid var(--clr-grey-1);
 	-webkit-border-radius: var(--radius);
@@ -98,4 +102,12 @@ form {
 	-ms-border-radius: var(--radius);
 	-o-border-radius: var(--radius);
 	box-shadow: var(--shadow);
+}
+
+textarea {
+	resize: none;
+	font-family: inherit;
+	outline: none;
+	font-size: 400;
+	height: 5rem;
 }

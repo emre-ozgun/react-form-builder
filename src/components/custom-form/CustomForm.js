@@ -16,7 +16,22 @@ const CustomForm = () => {
 			<form className='custom-form'>
 				<h1>Form Title</h1>
 				{formFields.map((formField) => {
-					console.log(formField);
+					if (formField.type === 'textarea') {
+						return (
+							<div className='form-control' key={formField.id}>
+								<label className='form-control__label' htmlFor={formField.id}>
+									{formField.label}
+								</label>
+								<textarea
+									id={formField.id}
+									cols='30'
+									rows='10'
+									placeholder={formField.placeholder}
+								></textarea>
+							</div>
+						);
+					}
+
 					return (
 						<div className='form-control' key={formField.id}>
 							<label className='form-control__label' htmlFor={formField.id}>
