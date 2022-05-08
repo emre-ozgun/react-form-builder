@@ -111,3 +111,8 @@ textarea {
 	font-size: 400;
 	height: 5rem;
 }
+
+input[type='date'],
+input[type='time'] {
+	font-family: inherit;
+}
